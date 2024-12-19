@@ -1,7 +1,13 @@
 @import './normalise';
+@import './fonts';
 @import './variables';
 @import './media';
 @import './mixins';
 @import './globals';
 @import './utils';
 
+@import './blocks/soc1al-link';
+@import './blocks/header';
+@import './blocks/header-logo';
+@import './blocks/header-nav';
+@import './blocks/header-contacts';

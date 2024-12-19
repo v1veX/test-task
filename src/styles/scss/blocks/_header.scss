@@ -1,0 +1,58 @@
+.header {
+    --headerPaddingY: 24px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-block: var(--headerPaddingY);
+
+    @include tablet {
+        position: static;
+        border-bottom: 1px solid var(--color-text-dim);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        column-gap: 60px;
+
+        @include custom-width(1150px) {
+            column-gap: 40px;
+        }
+
+        @include tablet {
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            width: auto;
+        }
+    }
+
+    &__burger-button {
+        padding: 8px;
+        background-color: transparent;
+        border: none;
+        color: var(--color-text);
+
+        @include hover {
+            color: var(--color-red);
+        }
+
+        & svg {
+            display: block;
+        }
+    }
+}

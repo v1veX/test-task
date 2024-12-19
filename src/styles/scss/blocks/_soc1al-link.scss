@@ -1,0 +1,16 @@
+.soc1al-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 36px;
+    background-color: var(--color-text-dim);
+    border-radius: 50%;
+    color: var(--color-text);
+
+    @include hover {
+        background-color: var(--color-red);
+    }
+
+    
+}

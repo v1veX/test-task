@@ -1,0 +1,19 @@
+.header-contacts {
+    display: flex;
+    column-gap: 24px;
+    align-items: center;
+
+    &__tel {
+        color: var(--color-text);
+        font-family: var(--font-family-secondary);
+        font-size: 24px;
+
+        @include hover {
+            color: var(--color-red);
+        }
+    }
+
+    &__link:not(:last-child) {
+        margin-right: 8px;
+    }
+}

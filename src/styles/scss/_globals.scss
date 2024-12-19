@@ -1,0 +1,12 @@
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-family-primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+a, button, input {
+    transition: all var(--transition-duration);
+}

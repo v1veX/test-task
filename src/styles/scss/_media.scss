@@ -1,0 +1,42 @@
+$tablet: 1025px;
+$tablet-above: 1024px;
+
+$mobile: 768px;
+$mobile-above: 767px;
+
+
+@mixin tablet {
+    @media (width < $tablet) {
+        @content;
+    }
+}
+
+@mixin tablet-above {
+    @media (width > $tablet-above) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (width < $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-above {
+    @media (width > $mobile-above) {
+        @content;
+    }
+}
+
+@mixin custom-width($screen-width) {
+    @media (width < $screen-width) {
+        @content;
+    }
+}
+
+@mixin custom-width-above($screen-width) {
+    @media (width > $screen-width) {
+        @content;
+    }
+}

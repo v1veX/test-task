@@ -1,0 +1,21 @@
+.header-nav {
+    &__list {
+        display: flex;
+        column-gap: 40px;
+
+        @include custom-width(1150px) {
+            column-gap: 30px;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding-block: 10px;
+        color: var(--color-text-semi-dim);
+        font-weight: 600;
+
+        @include hover {
+            color: var(--color-red);
+        }
+    }
+}
