@@ -1,12 +1,22 @@
 body {
     background-color: var(--color-bg);
     font-family: var(--font-family-primary);
+    font-weight: 400;
 }
 
 a {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 a, button, input {
     transition: all var(--transition-duration);
+}
+
+h2, h3 {
+    font-family: var(--font-family-secondary);
+    line-height: 120%;
 }

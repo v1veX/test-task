@@ -1,0 +1,66 @@
+.hero-advantages {
+    @include custom-width(920px) {
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        @include custom-width(920px) {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            padding-right: 40px;
+            border-right: 1px solid var(--color-text-dim);
+
+            @include mobile-small {
+                padding-right: 8px;
+            }
+        }
+
+        &:not(:first-child) {
+            padding-left: 40px;
+
+            @include mobile-small {
+                padding-left: 8px;
+            }
+        }
+    }
+
+    &__stats-count {
+        margin-bottom: 4px;
+        font-family: var(--font-family-secondary);
+        font-size: 48px;
+        line-height: 100%;
+        text-align: center;
+
+        @include mobile-small {
+            font-size: 18px;
+        }
+
+        &.rating {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+
+            & span {
+                flex-shrink: 0;
+            }
+        }
+
+        & .plus {
+            font-family: var(--font-family-primary);
+        }
+    }
+
+    &__stats-description {
+        font-size: 14px;
+        color: var(--color-gray);
+        line-height: 100%;
+        text-align: center;
+    }
+}
