@@ -5,12 +5,11 @@
     height: 36px;
     width: 36px;
     background-color: var(--color-text-dim);
+    backdrop-filter: blur(10px);
     border-radius: 50%;
     color: var(--color-text);
 
     @include hover {
         background-color: var(--color-red);
     }
-
-    
 }

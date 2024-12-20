@@ -1,0 +1,36 @@
+.manufacturers {
+    opacity: 0.5;
+    padding-block: 12px;
+    overflow: hidden;
+
+    @include mobile {
+        padding-block: 24px;
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 24px;
+
+        @include custom-width-above(1830px) {
+            justify-content: space-between;
+        }
+
+        @include mobile {
+            column-gap: 8px;
+        }
+    }
+
+    &__item {
+        flex-shrink: 0;
+    }
+
+    &__image {
+        height: 100px;
+        width: 100px;
+
+        @include mobile {
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
