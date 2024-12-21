@@ -2,6 +2,10 @@
     padding-top: 40px;
     margin-bottom: 80px;
 
+    @include mobile {
+        padding-top: 0;
+    }
+
     &__inner {
         --tiersInnerPaddingX: 80px;
 

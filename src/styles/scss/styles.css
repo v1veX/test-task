@@ -732,6 +732,11 @@ h2, h3 {
   padding-top: 40px;
   margin-bottom: 80px;
 }
+@media (width < 768px) {
+  .tiers {
+    padding-top: 0;
+  }
+}
 .tiers__inner {
   --tiersInnerPaddingX: 80px;
   padding-block: 80px;
