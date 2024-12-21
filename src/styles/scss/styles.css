@@ -757,6 +757,7 @@ h2, h3 {
 @media (width < 768px) {
   .tiers__inner {
     border: none;
+    border-radius: 16px;
   }
 }
 @media (width < 551px) {
@@ -972,12 +973,15 @@ h2, h3 {
 }
 @media (width < 768px) {
   .tiers-label {
+    height: 65px;
     padding-left: 12px;
     padding-right: 12px;
   }
 }
-.tiers-label__inner {
+.tiers-label::after {
+  content: "";
   position: relative;
+  display: block;
   height: 100%;
   width: 100%;
   background-color: var(--color-red);
@@ -985,6 +989,17 @@ h2, h3 {
   border-bottom-right-radius: 28px;
   transform: skewY(-3.82deg) translateY(-50%);
   z-index: -1;
+}
+@media (width < 1025px) {
+  .tiers-label::after {
+    translate: 0 20%;
+  }
+}
+@media (width < 768px) {
+  .tiers-label::after {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
 }
 .tiers-label__content {
   position: absolute;

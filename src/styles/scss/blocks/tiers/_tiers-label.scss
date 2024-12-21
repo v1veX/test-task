@@ -5,12 +5,15 @@
     padding-right: 58px;
 
     @include mobile {
+        height: 65px;
         padding-left: 12px;
         padding-right: 12px;
     }
 
-    &__inner {
+    &::after {
+        content: '';
         position: relative;
+        display: block;
         height: 100%;
         width: 100%;
         background-color: var(--color-red);
@@ -18,6 +21,15 @@
         border-bottom-right-radius: 28px;
         transform: skewY(-3.82deg) translateY(-50%);
         z-index: -1;
+
+        @include tablet {
+            translate: 0 20%;
+        }
+
+        @include mobile {
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+        }
     }
 
     &__content {
