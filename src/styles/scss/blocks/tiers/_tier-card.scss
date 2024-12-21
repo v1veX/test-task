@@ -1,0 +1,30 @@
+.tier-card {
+    color: var(--color-text-semi-dim);
+    transition: color, var(--transition-duration);
+
+    &.active {
+        color: var(--color-text);
+    }
+
+    &__title {
+        margin-bottom: 11px;
+        font-size: 32px;
+
+        @include tablet {
+            font-size: 24px;
+        }
+
+        @include mobile-small {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+
+        @include tablet {
+            font-size: 14px;
+        }
+    }
+}

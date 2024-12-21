@@ -1,0 +1,80 @@
+.tiers-label {
+    position: relative;
+    height: 99px;
+    padding-left: 55px;
+    padding-right: 58px;
+
+    @include mobile {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    &__inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-red);
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+        transform: skewY(-3.82deg) translateY(-50%);
+        z-index: -1;
+    }
+
+    &__content {
+        position: absolute;
+        top: 14px;
+        left: 80px;
+        display: flex;
+        align-items: flex-start;
+        column-gap: 11px;
+
+        @include mobile {
+            top: 10px;
+            left: 28px;
+        }
+
+        @include mobile-small {
+            top: 5px;
+        }
+    }
+
+    &__text {
+        color: var(--color-text);
+        font-size: 14px;
+    }
+
+    &__paragraph {
+        &:first-child {
+            font-size: 24px;
+            line-height: 100%;
+
+            @include tablet {
+                font-size: 18px;
+            }
+
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+        
+        &--big {
+            font-size: 1.3em;
+            font-weight: 900;
+        }
+    }
+
+    &__link {
+        padding: 8px 16px;
+        background-color: var(--color-text-very-dim);
+        border-radius: 30px;
+        color: var(--color-text);
+
+        @include hover {
+            color: var(--color-red);
+        }
+
+        & svg {
+            display: block;
+        }
+    }
+}

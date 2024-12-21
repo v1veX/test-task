@@ -5,6 +5,7 @@
     --color-text-semi-dim: rgba(255, 255, 255, 0.7);
     --color-gray: rgba(255, 255, 255, 0.5);
     --color-text-dim: rgba(255, 255, 255, 0.2);
+    --color-text-very-dim: rgba(255, 255, 255, 0.3);
     --color-text-super-dim: rgba(255, 255, 255, 0.1);
     --color-red: #D51117;
     --color-blue: #0D2F68;
@@ -17,4 +18,5 @@
     --container-padding-x: 30px;
 
     --transition-duration: 0.3s;
+    --progress-bar-transition-duration: 0s; // sets in tiers.js. Here's just as reminder
 }

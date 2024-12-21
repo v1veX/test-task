@@ -1,5 +1,5 @@
 .hero {
-    background-image: url('../images/hero.png');
+    background-image: url('../images/hero-bg.png');
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top;
@@ -64,13 +64,6 @@
 
         @include mobile-small {
             margin-bottom: 24px;
-            font-size: 16px;
-        }
-    }
-
-    &__calc-button {
-        @include custom-width(1300px) {
-            padding: 12px 20px;
             font-size: 16px;
         }
     }

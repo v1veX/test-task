@@ -1,0 +1,194 @@
+.tiers {
+    padding-top: 40px;
+    margin-bottom: 80px;
+
+    &__inner {
+        --tiersInnerPaddingX: 80px;
+
+        padding-block: 80px;
+        padding-inline: var(--tiersInnerPaddingX);
+        background-image: url('../images/tiers-bg.png');
+        background-size: cover;
+        background-position: left top;
+        background-repeat: no-repeat;
+        border: 1px solid var(--color-text-super-dim);
+        border-radius: 28px;
+
+        @include custom-width(1300px) {
+            --tiersInnerPaddingX: 40px;
+
+            padding-block: 40px;
+        }
+
+        @include mobile {
+            border: none;
+        }
+
+        @include mobile-small {
+            --tiersInnerPaddingX: 12px;
+
+            padding-block: 16px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        color: var(--color-text);
+        font-size: 70px;
+        line-height: 100%;
+        text-align: center;
+
+        @include tablet {
+            font-size: 40px;
+        }
+
+        @include mobile-small {
+            font-size: 24px;
+        }
+    }
+
+    &__description {
+        max-width: 504px;
+        margin-bottom: 80px;
+        margin-inline: auto;
+        color: var(--color-gray);
+        font-size: 18px;
+        text-align: center;
+
+        @include tablet {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        @include mobile {
+            margin-bottom: 16px;
+        }
+
+        @include mobile-small {
+            font-size: 14px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        margin-bottom: 80px;
+
+        @include custom-width(1300px) {
+            margin-bottom: 40px;
+        }
+
+        @include mobile {
+            flex-direction: row;
+            column-gap: 12px;
+        }
+    }
+
+    &__progress {
+        &-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 1.1fr;
+            column-gap: 24px;
+            flex-shrink: 0;
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+            }
+
+            @include mobile-small {
+                row-gap: 4px;
+            }
+        }
+
+        &-item {
+            --progressBarInnerHeight: 100%;
+            --progressBarInnerWidth: 0%;
+            --progressBarInnerTransition: 0s;
+        
+            display: flex;
+            align-items: center;
+            column-gap: 24px;
+
+            @include mobile {
+                --progressBarInnerHeight: 0%;
+                --progressBarInnerWidth: 100%;
+
+                flex-direction: column;
+                row-gap: 10px;
+            }
+
+            @include mobile-small {
+                row-gap: 4px;
+            }
+
+            &--last {
+                margin-right: calc(var(--tiersInnerPaddingX) * -1);
+
+                @include mobile {
+                    margin-right: 0;
+                }
+            }
+
+            &.active {
+                --progressBarInnerWidth: 100%;
+                --progressBarInnerTransition: var(--progress-bar-transition-duration);
+
+                @include mobile {
+                    --progressBarInnerHeight: 100%;
+                }
+            }
+        }
+
+        &-image {
+            flex-shrink: 0;
+
+            @include tablet {
+                height: 35px;
+                width: 35px;
+            }
+        }
+
+        &-bar {
+            height: 2px;
+            width: 100%;
+            background-color: var(--color-text-dim);
+
+            @include mobile {
+                height: 20px;
+                width: 2px;
+            }
+
+            @include mobile-small {
+                height: 16px;
+            }
+        }
+
+        &-bar-inner {
+            height: var(--progressBarInnerHeight);
+            width: var(--progressBarInnerWidth);
+            background-color: var(--color-red);
+            transition: (width, height), var(--progressBarInnerTransition) linear;
+        }
+    }
+
+    &__cards-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 1.1fr;
+        column-gap: 57px;
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        column-gap: 12px;
+    }
+}
