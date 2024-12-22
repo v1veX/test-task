@@ -1,0 +1,60 @@
+.bait {
+    margin-bottom: 60px;
+    color: var(--color-text);
+    overflow: hidden;
+
+    @include tablet {
+        margin-bottom: 30px;
+    }
+
+    @include mobile {
+        margin-bottom: 0;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    &__top-list, &__bottom-list {
+        display: flex;
+        justify-content: center;
+        padding-block: 8px;
+
+        @include mobile-small {
+            justify-content: flex-end;
+        }
+    }
+
+    &__top-list {
+        padding-left: 90px;
+        background-color: var(--color-red);
+
+        @include mobile-small {
+            margin-right: -10px;
+        }
+    }
+
+    &__bottom-list {
+        padding-right: 90px;
+        background-color: var(--color-bg-alt);
+
+        @include mobile-small {
+            padding-right: 0;
+        }
+    }
+
+    &__item {
+        flex-shrink: 0;
+        padding-inline: 16px;
+
+        @include mobile-small {
+            font-size: 14px;
+        }
+
+        &:not(:last-child) {
+            border-right: 1px solid var(--color-white-40);
+        }
+    }
+}

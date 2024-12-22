@@ -198,6 +198,7 @@ svg * {
   --color-text: rgba(255, 255, 255, 1);
   --color-text-semi-dim: rgba(255, 255, 255, 0.7);
   --color-gray: rgba(255, 255, 255, 0.5);
+  --color-white-40: rgba(255, 255, 255, 0.4);
   --color-text-dim: rgba(255, 255, 255, 0.2);
   --color-text-very-dim: rgba(255, 255, 255, 0.3);
   --color-text-super-dim: rgba(255, 255, 255, 0.1);
@@ -1274,4 +1275,65 @@ h2, h3 {
   .about__facts-description {
     font-size: 14px;
   }
+}
+
+.bait {
+  margin-bottom: 60px;
+  color: var(--color-text);
+  overflow: hidden;
+}
+@media (width < 1025px) {
+  .bait {
+    margin-bottom: 30px;
+  }
+}
+@media (width < 768px) {
+  .bait {
+    margin-bottom: 0;
+  }
+}
+.bait__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.bait__top-list, .bait__bottom-list {
+  display: flex;
+  justify-content: center;
+  padding-block: 8px;
+}
+@media (width < 551px) {
+  .bait__top-list, .bait__bottom-list {
+    justify-content: flex-end;
+  }
+}
+.bait__top-list {
+  padding-left: 90px;
+  background-color: var(--color-red);
+}
+@media (width < 551px) {
+  .bait__top-list {
+    margin-right: -10px;
+  }
+}
+.bait__bottom-list {
+  padding-right: 90px;
+  background-color: var(--color-bg-alt);
+}
+@media (width < 551px) {
+  .bait__bottom-list {
+    padding-right: 0;
+  }
+}
+.bait__item {
+  flex-shrink: 0;
+  padding-inline: 16px;
+}
+@media (width < 551px) {
+  .bait__item {
+    font-size: 14px;
+  }
+}
+.bait__item:not(:last-child) {
+  border-right: 1px solid var(--color-white-40);
 }/*# sourceMappingURL=styles.css.map */
