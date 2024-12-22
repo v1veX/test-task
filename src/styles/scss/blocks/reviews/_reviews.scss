@@ -1,0 +1,112 @@
+.reviews {
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+    @include tablet {
+        padding-bottom: 60px;
+    }
+
+    @include mobile {
+        padding-bottom: 40px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-top: 40px;
+        margin-bottom: 40px;
+
+        @include tablet {
+            padding-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 16px;
+            padding-top: 0px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__title {
+        &-rating {
+            display: inline-flex;
+            align-items: center;
+            column-gap: 12px;
+            margin-left: 24px;
+
+            @include mobile {
+                column-gap: 8px;
+                margin-left: 12px;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                height: 0.72em;
+                aspect-ratio: 1;
+                background-image: url('../images/icons/star-big.png');
+                background-size: cover;
+            }
+        }
+    }
+
+    &__refs {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        &::-webkit-scrollbar { width: 0; }
+
+        &-list {
+            display: flex;
+            column-gap: 24px;
+        }
+
+        &-item {
+            flex-shrink: 0;
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            color: var(--color-gray);
+
+            @include hover {
+                color: var(--color-red);
+            }
+        }
+    }
+
+    &__body {
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+
+        &::-webkit-scrollbar { height: 0; }
+    }
+
+    &__list-row {
+        --gap: 16px;
+
+        display: flex;
+        column-gap: var(--gap);
+        width: fit-content;
+
+        @include mobile {
+            --gap: 12px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: var(--gap);
+        }
+    }
+}
