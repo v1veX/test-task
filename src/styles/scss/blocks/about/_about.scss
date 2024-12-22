@@ -21,6 +21,10 @@
             flex-direction: column-reverse;
             align-items: normal;
         }
+
+        @include mobile {
+            padding-bottom: 32px;
+        }
     }
 
     &__title {
@@ -103,7 +107,7 @@
         display: grid;
         grid-template-columns: 1fr 2.75fr;
         column-gap: var(--gridColumnGap);
-        padding-top: 33px;
+        padding-top: 32px;
 
         @include custom-width(1300px) {
             --gridColumnGap: 10px;
@@ -111,6 +115,10 @@
 
         @include custom-width(1100px) {
             display: block;
+        }
+
+        @include mobile {
+            padding-top: 24px;
         }
     }
 
@@ -126,6 +134,10 @@
 
             @include custom-width(1100px) {
                 justify-content: space-around;
+            }
+
+            @include mobile-small {
+                justify-content: space-between;
             }
         }
     
@@ -150,7 +162,8 @@
             }
     
             @include mobile-small {
-                font-size: 18px;
+                font-size: 24px;
+                text-align: left;
             }
         }
     
