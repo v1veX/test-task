@@ -1,0 +1,15 @@
+.section {
+    &__title {
+        color: var(--color-text);
+        font-size: 70px;
+        line-height: 100%;
+
+        @include tablet {
+            font-size: 40px;
+        }
+
+        @include mobile-small {
+            font-size: 24px;
+        }
+    }
+}

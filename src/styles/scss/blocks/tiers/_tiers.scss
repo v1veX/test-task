@@ -38,18 +38,7 @@
 
     &__title {
         margin-bottom: 8px;
-        color: var(--color-text);
-        font-size: 70px;
-        line-height: 100%;
         text-align: center;
-
-        @include tablet {
-            font-size: 40px;
-        }
-
-        @include mobile-small {
-            font-size: 24px;
-        }
     }
 
     &__description {
