@@ -1,0 +1,108 @@
+.car-card {
+    --headerPaddingInline: 8px;
+    --imagePosition: static;
+    --imageTop: 0;
+    --imageLeft: 0;
+    --imageTranslate: 0 0;
+    --imageHeight: auto;
+    --imageBorderRadius: 16px;
+    --descriptionFontWeight: 700;
+    --priceFontSize: 24px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 8px;
+    background-color: var(--color-bg-alt);
+    border-radius: 24px;
+    overflow: hidden;
+
+    @include mobile {
+        --headerPaddingInline: 0px;
+        --imageBorderRadius: 8px;
+        --priceFontSize: 16px;
+
+        padding: 12px 8px;
+        border-radius: 16px;
+    }
+
+    &.active {
+        --headerPaddingInline: 0px;
+        --imagePosition: absolute;
+        --imageTop: 50%;
+        --imageLeft: 50%;
+        --imageTranslate: -50% -50%;
+        --imageHeight: 100%;
+        --imageBorderRadius: 0px;
+        --descriptionFontWeight: 400;
+        --priceFontSize: 36px;
+
+        padding: 28px;
+        border-radius: 28px;
+
+        @include mobile {
+            --priceFontSize: 24px;
+
+            padding: 12px;
+            border-radius: 16px;
+        }
+    }
+
+    &__header, &__footer {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__header {
+        padding-inline: var(--headerPaddingInline);
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        font-size: 24px;
+        color: var(--color-text);
+
+        @include mobile {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+    }
+
+    &__description {
+        font-size: 14px;
+        font-weight: var(--descriptionFontWeight);
+        color: var(--color-gray);
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+
+    &__image {
+        position: var(--imagePosition);
+        top: var(--imageTop);
+        left: var(--imageLeft);
+        translate: var(--imageTranslate);
+        height: var(--imageHeight);
+        max-width: 1000px;
+        width: auto;
+        border-radius: var(--imageBorderRadius);
+        z-index: 1;
+        transition: (height, width) var(--carousel-transition-duration);
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__price {
+        padding-inline: var(--headerPaddingInline);
+        font-family: var(--font-family-secondary);
+        font-size: var(--priceFontSize);
+        color: var(--color-text);
+        transition: font-size, var(--carousel-transition-duration);
+    }
+}
