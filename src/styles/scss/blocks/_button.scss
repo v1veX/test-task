@@ -27,7 +27,8 @@
     }
 
     &--gradient {
-        background: linear-gradient(120deg, var(--color-blue), var(--color-red));
+        @include gradient;
+
         backdrop-filter: none;
     }
 }

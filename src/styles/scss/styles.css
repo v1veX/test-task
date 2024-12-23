@@ -123,11 +123,11 @@ body {
 /**
   Приводим к единому цвету svg-элементы
  */
-svg *[fill] {
+svg:not([class]) *[fill] {
   fill: currentColor;
 }
 
-svg *[stroke] {
+svg:not([class]) *[stroke] {
   stroke: currentColor;
 }
 
@@ -1513,4 +1513,93 @@ h2, h3 {
 .review-card__date {
   font-size: 14px;
   color: var(--color-gray);
+}
+
+.vk-clips {
+  --paddingTop: 60px;
+  --paddingBottom: 100px;
+  position: relative;
+  padding-top: var(--paddingTop);
+  padding-bottom: var(--paddingBottom);
+}
+.vk-clips::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: var(--paddingTop);
+  left: 0;
+  right: 0;
+  bottom: var(--paddingBottom);
+  z-index: -1;
+  transform: skewY(-3deg);
+  background: linear-gradient(120deg, var(--color-blue), var(--color-red));
+}
+.vk-clips__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.vk-clips__title {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.vk-clips__title::before {
+  content: "";
+  display: block;
+  height: 1em;
+  aspect-ratio: 1;
+  background-image: url("../images/icons/vk-clips.svg");
+  background-size: cover;
+}
+.vk-clips__link {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+@media (width < 551px) {
+  .vk-clips__link {
+    justify-content: center;
+    width: 100%;
+  }
+}
+.vk-clips__body {
+  padding-inline: var(--container-padding-x);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+@media (width < 551px) {
+  .vk-clips__body {
+    --container-padding-x: 16px;
+  }
+}
+.vk-clips__body::-webkit-scrollbar {
+  height: 0;
+}
+.vk-clips__list {
+  display: flex;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+@media (width < 551px) {
+  .vk-clips__list {
+    -moz-column-gap: 8px;
+         column-gap: 8px;
+  }
+}
+.vk-clips__item {
+  flex-shrink: 0;
+  width: 150px;
+}
+.vk-clips__mobile-link-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
 }/*# sourceMappingURL=styles.css.map */
