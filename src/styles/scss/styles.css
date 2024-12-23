@@ -195,6 +195,7 @@ svg * {
 :root {
   --color-bg: #011224;
   --color-bg-alt: #081E36;
+  --color-bg-input: #20344A;
   --color-text: rgba(255, 255, 255, 1);
   --color-text-semi-dim: rgba(255, 255, 255, 0.7);
   --color-gray: rgba(255, 255, 255, 0.5);
@@ -226,11 +227,11 @@ a {
   text-decoration: none;
 }
 
-button {
+button, input:where([type=checkbox]), label {
   cursor: pointer;
 }
 
-a, button, input {
+a, button, input, textarea {
   transition: all var(--transition-duration);
 }
 
@@ -238,6 +239,10 @@ h2, h3 {
   font-family: var(--font-family-secondary);
   font-weight: 400;
   line-height: 100%;
+}
+
+textarea {
+  resize: none;
 }
 
 .container {
@@ -1602,4 +1607,182 @@ h2, h3 {
   display: flex;
   justify-content: center;
   padding-bottom: 15px;
+}
+
+.contacts {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+@media (width < 1025px) {
+  .contacts {
+    display: block;
+  }
+}
+.contacts__body {
+  max-width: 393px;
+}
+@media (width < 1025px) {
+  .contacts__body {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+}
+.contacts__title {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+.contacts__title::after {
+  content: "";
+  display: block;
+  height: 0.9em;
+  aspect-ratio: 1;
+  background-image: url("../images/icons/hand.png");
+  background-size: cover;
+}
+.contacts__description {
+  margin-bottom: 60px;
+  font-size: 18px;
+  color: var(--color-gray);
+}
+@media (width < 1025px) {
+  .contacts__description {
+    margin-bottom: 36px;
+    font-size: 16px;
+  }
+}
+@media (width < 768px) {
+  .contacts__description {
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+}
+.contacts__item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.contact-detail__label {
+  margin-bottom: 8px;
+  color: var(--color-gray);
+}
+.contact-detail__link, .contact-detail__address {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text);
+  font-style: normal;
+}
+
+.contacts-form {
+  max-width: 640px;
+  padding: 40px;
+  background-color: var(--color-bg-alt);
+  border-radius: 28px;
+}
+@media (width < 1100px) {
+  .contacts-form {
+    max-width: 520px;
+  }
+}
+@media (width < 1025px) {
+  .contacts-form {
+    max-width: 100%;
+  }
+}
+@media (width < 768px) {
+  .contacts-form {
+    padding: 16px 12px;
+    border-radius: 16px;
+  }
+}
+.contacts-form__row:not(:last-child) {
+  margin-bottom: 24px;
+}
+.contacts-form__row--double {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+}
+@media (width < 1100px) {
+  .contacts-form__row--double {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+}
+.contacts-form__field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.contacts-form__checkbox-field {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.contacts-form__label {
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-text);
+}
+.contacts-form__control {
+  padding: 16px;
+  background-color: var(--color-bg-input);
+  border: none;
+  border-radius: 32px;
+  color: var(--color-text);
+}
+.contacts-form__control:focus-visible {
+  outline: var(--color-red) solid 2px;
+}
+.contacts-form__control::-moz-placeholder {
+  color: var(--color-gray);
+}
+.contacts-form__control::placeholder {
+  color: var(--color-gray);
+}
+.contacts-form__control:not([type]) {
+  height: 101px;
+  border-radius: 16px;
+}
+@media (width < 768px) {
+  .contacts-form__control:not([type]) {
+    padding: 12px;
+  }
+}
+.contacts-form__control:where([type=checkbox]) {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-text);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-bg);
+}
+.contacts-form__control:where([type=checkbox]):checked::after {
+  content: "✔";
+}
+.contacts-form__control:where([type=tel])::-moz-placeholder {
+  color: var(--color-text);
+}
+.contacts-form__control:where([type=tel])::placeholder {
+  color: var(--color-text);
+}
+.contacts-form__error-message {
+  font-size: 14px;
+  color: var(--color-red);
+}
+.contacts-form__submit {
+  width: 100%;
 }/*# sourceMappingURL=styles.css.map */

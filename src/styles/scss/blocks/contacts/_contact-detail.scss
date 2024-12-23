@@ -1,0 +1,13 @@
+.contact-detail {
+    &__label {
+        margin-bottom: 8px;
+        color: var(--color-gray);
+    }
+
+    &__link, &__address {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--color-text);
+        font-style: normal;
+    }
+}

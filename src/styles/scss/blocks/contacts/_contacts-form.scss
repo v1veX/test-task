@@ -1,0 +1,115 @@
+.contacts-form {
+    max-width: 640px;
+    padding: 40px;
+    background-color: var(--color-bg-alt);
+    border-radius: 28px;
+
+    @include custom-width(1100px) {
+        max-width: 520px;
+    }
+    
+    @include tablet {
+        max-width: 100%;
+    }
+
+    @include mobile {
+        padding: 16px 12px;
+        border-radius: 16px;
+    }
+
+    &__row {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        &--double {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 16px;
+
+            @include custom-width(1100px) {
+                display: flex;
+                flex-direction: column;
+                row-gap: 16px;
+            }
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    &__checkbox-field {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+
+    &__label {
+        font-size: 14px;
+        line-height: 100%;
+        color: var(--color-text);
+    }
+
+    &__control {
+        padding: 16px;
+        background-color: var(--color-bg-input);
+        border: none;
+        border-radius: 32px;
+        color: var(--color-text);
+
+        &:focus-visible {
+            outline: var(--color-red) solid 2px;
+        }
+
+        &::placeholder {
+            color: var(--color-gray);
+        }
+
+        &:not([type]) {
+            height: 101px;
+            border-radius: 16px;
+
+            @include mobile {
+                padding: 12px;
+            }
+        }
+
+        &:where([type="checkbox"]) {
+            appearance: none;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 24px;
+            width: 24px;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-text);
+            border: none;
+            border-radius: 8px;
+            color: var(--color-bg);
+
+            &:checked::after {
+                content: '✔';
+            }
+        }
+
+        &:where([type="tel"]) {
+            &::placeholder {
+                color: var(--color-text);
+            }
+        }
+    }
+
+    &__error-message {
+        font-size: 14px;
+        color: var(--color-red);
+    }
+
+    &__submit {
+        width: 100%;
+    }
+}

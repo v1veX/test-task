@@ -9,11 +9,11 @@ a {
     text-decoration: none;
 }
 
-button {
+button, input:where([type="checkbox"]), label {
     cursor: pointer;
 }
 
-a, button, input {
+a, button, input, textarea {
     transition: all var(--transition-duration);
 }
 
@@ -21,4 +21,8 @@ h2, h3 {
     font-family: var(--font-family-secondary);
     font-weight: 400;
     line-height: 100%;
+}
+
+textarea {
+    resize: none;
 }
