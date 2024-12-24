@@ -228,8 +228,9 @@ a {
   text-decoration: none;
 }
 
-button, input:where([type=checkbox]), label {
+a, button, input:where([type=checkbox]), label {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a, button, input, textarea {
@@ -532,6 +533,55 @@ textarea {
 }
 .header-contacts__link:not(:last-child) {
   margin-right: 8px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: none;
+  background-color: var(--color-bg);
+}
+.mobile-menu.show {
+  display: block;
+}
+.mobile-menu__inner {
+  position: relative;
+  padding: 60px 20px;
+}
+.mobile-menu__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  color: var(--color-text);
+  border: none;
+}
+.mobile-menu__close svg {
+  height: 100%;
+  width: 100%;
+}
+.mobile-menu__item {
+  margin-bottom: 20px;
+}
+.mobile-menu__link {
+  font-size: 30px;
+  color: var(--color-gray);
+}
+@media (hover: hover) {
+  .mobile-menu__link:hover {
+    color: var(--color-red);
+  }
+}
+@media (hover: none) {
+  .mobile-menu__link:active {
+    color: var(--color-red);
+  }
 }
 
 .hero {
