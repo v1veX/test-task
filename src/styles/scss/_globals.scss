@@ -9,8 +9,9 @@ a {
     text-decoration: none;
 }
 
-button, input:where([type="checkbox"]), label {
+a, button, input:where([type="checkbox"]), label {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent
 }
 
 a, button, input, textarea {

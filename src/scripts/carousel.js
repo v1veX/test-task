@@ -1,3 +1,5 @@
+import { SwipeDetector } from "./swipeDetector.js";
+
 export class Carousel {
     _selectors = {
         prevButton: '[data-js-carousel-prev]',
@@ -27,6 +29,9 @@ export class Carousel {
         this._carouselElement = document.querySelector(selector);
 
         this._direction = options?.direction === 'rtl' ? 1 : -1;
+
+        const carouselListElement = this._carouselElement.querySelector(this._selectors.carouselList);
+        new SwipeDetector(carouselListElement);
         
         this._setMoveLength();
         
@@ -72,6 +77,14 @@ export class Carousel {
 
     _bindEvents() {
         this._carouselElement.addEventListener('click', this._onClick);
+
+        this._carouselElement.addEventListener('leftswipe', () => {
+            this._moveSlides(-1 * this._direction);
+        });
+
+        this._carouselElement.addEventListener('rightswipe', () => {
+            this._moveSlides(1 * this._direction);
+        });
 
         window.addEventListener('resize', () => {
             this._setMoveLength();
