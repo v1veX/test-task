@@ -1,0 +1,106 @@
+.subscribe {
+    margin-bottom: 174px;
+
+    @include tablet {
+        margin-bottom: 60px;
+    }
+
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 24px;
+        padding: 74px 140px;
+        background-color: var(--color-bg-alt);
+        border-radius: 28px;
+
+        @include custom-width(930px) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 16px;
+            padding: 32px;
+        }
+
+        @include mobile-small {
+            padding: 16px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 50px;
+            right: 50px;
+            bottom: -12px;
+            height: 100px;
+            background-color: var(--color-red);
+            border-radius: 28px;
+            transform: skewY(-1deg);
+
+            @include mobile {
+                border-radius: 24px;
+            }
+        }
+    }
+
+    &__image-content {
+        flex-shrink: 0;
+    }
+
+    &__image {
+        margin-top: -176px;
+        margin-left: -125px;
+        margin-bottom: -159px;
+
+        @include custom-width(1350px) {
+            width: 400px;
+            height: auto;
+            margin-top: -70px;
+            margin-bottom: -80px;
+        }
+
+        @include custom-width(930px) {
+            margin-top: -78px;
+            margin-left: 0px;   
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__body {
+        max-width: 595px;
+
+        @include custom-width(930px) {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 32px;
+
+        @include mobile {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        column-gap: 24px;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        &-icon {
+            padding: 10px;
+            background-color: var(--color-text-dim);
+            border-radius: 12px;
+
+            & svg {
+                display: block;
+            }
+        }
+    }
+}

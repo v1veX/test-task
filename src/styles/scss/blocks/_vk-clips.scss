@@ -5,6 +5,15 @@
     position: relative;
     padding-top: var(--paddingTop);
     padding-bottom: var(--paddingBottom);
+    margin-bottom: 182px;
+
+    @include tablet {
+        margin-bottom: 50px;
+    }
+
+    @include mobile {
+        margin-bottom: 0;
+    }
 
     &::after {
         content: '';
