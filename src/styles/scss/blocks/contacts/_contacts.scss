@@ -6,6 +6,11 @@
 
     @include tablet {
         display: block;
+        margin-bottom: 60px;
+    }
+
+    @include mobile-small {
+        margin-bottom: 40px;
     }
 
     &__body {

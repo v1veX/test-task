@@ -1,0 +1,107 @@
+.footer {
+    background-color: var(--color-bg-alt);
+    border-top: 4px solid var(--color-red);
+
+    &__top {
+        padding-top: 40px;
+        padding-bottom: 24px;
+
+        @include tablet {
+            padding-top: 24px;
+        }
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+
+            @include tablet {
+                flex-direction: column;
+                row-gap: 24px;
+            }
+        }
+    }
+
+    &__left {
+        display: flex;
+        column-gap: 60px;
+
+        @include tablet {
+            justify-content: space-between;
+        }
+
+        @include mobile-small {
+            flex-direction: column;
+            row-gap: 24px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        column-gap: 80px;
+
+        @include mobile-small {
+            column-gap: 60px;
+        }
+    }
+
+    &__phone {
+        margin-bottom: 16px;
+
+        &-title {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 100%;
+            color: var(--color-gray);
+        }
+
+        &-link {
+            font-family: var(--font-family-secondary);
+            font-size: 48px;
+            line-height: 100%;
+            color: var(--color-text);
+
+            @include hover {
+                color: var(--color-red);
+            }
+
+            @include tablet {
+                font-size: 32px;
+            }
+
+            @include mobile-small {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__bottom {
+        padding-block: 24px;
+        border-top: 1px solid var(--color-text-super-dim);
+
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--color-text);
+
+            @include tablet {
+                flex-direction: column-reverse;
+                row-gap: 16px;
+            }
+        }
+    }
+
+    &__copyright {
+        @include tablet {
+            color: var(--color-gray);
+        }
+    }
+
+    &__privacy-link {
+        color: inherit;
+
+        @include hover {
+            color: var(--color-red);
+        }
+    }
+}

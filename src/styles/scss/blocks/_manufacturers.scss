@@ -4,7 +4,7 @@
     overflow: hidden;
 
     @include mobile {
-        padding-block: 24px;
+        padding-block: 0 24px;
     }
 
     &__list {

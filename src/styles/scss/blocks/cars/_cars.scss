@@ -1,3 +1,7 @@
 .cars {
     overflow: hidden;
+
+    @include mobile {
+        padding-bottom: 24px;
+    }
 }

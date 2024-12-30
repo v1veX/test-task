@@ -1,0 +1,15 @@
+.footer-soc1als {
+    &__list {
+        display: flex;
+        column-gap: 12px;
+    }
+
+    &__link {
+        display: block;
+        color: var(--color-text);
+
+        @include hover {
+            color: var(--color-red);
+        }
+    }
+}
